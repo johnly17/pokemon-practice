@@ -8,7 +8,7 @@
 .search-container {
   display: flex;
   justify-content: center;
-  margin: 100px 0;
+  margin: 100px 0 50px 0;
 }
 
 .search-form label {
@@ -47,4 +47,27 @@
   border: none;
   font-size: 1.2rem;
   cursor: pointer;
+}
+
+.pokemon-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+}
+
+.poke-card {
+    padding: 10px;
+    margin: 0px 100px;
+}
+
+.detailed-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.detailed-card img {
+    height: 10rem;
+    width: 10rem;
 }

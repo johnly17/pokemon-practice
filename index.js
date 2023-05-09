@@ -13,6 +13,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
         pokeCard.append(h2);
         pokeContainer.append(pokeCard);
+
+        h2.addEventListener("click", () => {
+            const detailedCard = document.createElement("div");
+            detailedCard.className = "detailed-card";
+
+            fetch(pokemon.url)
+                .then((r) => r.json())
+                .then(data => {
+                    const h1 = document.createElement("h1");
+                    h1.innerHTML = data.forms[0].name;
+
+                    const img = document.createElement("img");
+                    img.src = data.sprites.front_shiny;
+
+                    const statsList = document.createElement("ul");
+                    statsList.className = "stats-list";
+                    statsList.innerHTML = "Stats"
+                    
+
+                    pokeContainer.innerHTML = '';
+                    detailedCard.append(h1, img, statsList);
+                    pokeContainer.append(detailedCard);
+
+
+                
+                })
+        })
+
       });
     });
 });
